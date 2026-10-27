@@ -47,41 +47,6 @@ Empirical validation of budget accuracy and regional expense spread across 6,276
 
 ---
 
-## 🏗️ The End-to-End Analytics Trifecta (Python + SQL + Power BI)
-
-This solution implements a production-grade 3-tier architecture:
-
-```mermaid
-graph TD
-    subgraph Tier1 ["Tier 1: Data Ingestion & Engineering (Python)"]
-        CSV["Raw ERP General Ledger Feeds<br/>(10,983 transactions across Americas, EMEA, APAC)"]
-        ENGINE["src/consolidation_engine.py<br/>Multi-table dimensional joins & monthly aggregation"]
-        CSV --> ENGINE
-    end
-
-    subgraph Tier2 ["Tier 2: Governance & Data Warehousing (SQL / Kimball Schema)"]
-        AUDIT{"Zero-Cent Audit Gate<br/>Delta = $0.00?"}
-        PASSED["[PASSED] 100% Reconciled to the Cent"]
-        FAILED["[FAILED] Audit Exception Logged"]
-        MART["Materialized Analytical Cube<br/>(288 consolidated monthly records)"]
-
-        ENGINE --> AUDIT
-        AUDIT -->|Yes| PASSED
-        PASSED --> MART
-        AUDIT -->|No| FAILED
-    end
-
-    subgraph Tier3 ["Tier 3: Advanced Analytics & Executive Reporting (Python + Power BI)"]
-        STATS["Python Statistical Modeling<br/>• Variance Normality & Bias Checks<br/>• Q1 2026 Regression Forecasting"]
-        PBI["Power BI Executive Dashboard<br/>• Dynamic Period-over-Period DAX<br/>• Operating & Gross Margin Analysis"]
-
-        MART --> STATS
-        MART --> PBI
-    end
-```
-
----
-
 ## 📐 Data Model Architecture (Kimball Star Schema)
 
 The platform organizes multi-entity financial transactions into an analytical **Star Schema**:
