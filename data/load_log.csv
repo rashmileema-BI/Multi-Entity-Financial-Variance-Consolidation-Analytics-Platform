@@ -1,0 +1,2 @@
+﻿"LogID","JobName","StartTime","EndTime","RowsLoaded","Status","ErrorMsg"
+"1","sp_Consolidate_Financial_Cube","10/26/2026 2:08:17 PM","10/26/2026 2:08:18 PM","288","SUCCESS",""
