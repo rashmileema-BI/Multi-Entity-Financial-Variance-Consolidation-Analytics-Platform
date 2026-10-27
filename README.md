@@ -47,6 +47,13 @@ Empirical validation of budget accuracy and regional expense spread across 6,276
 
 ---
 
+### 4. Process Architecture: As-Is vs. To-Be (BPMN 2.0)
+The enterprise business process transformation modeled in formal **BPMN 2.0 (ISO/IEC 19510)** standard:
+
+![BPMN 2.0 Process Architecture](assets/AS-IS%20vs%20TO-BE.png)
+
+---
+
 ## 📐 Data Model Architecture (Kimball Star Schema)
 
 The platform organizes multi-entity financial transactions into an analytical **Star Schema**:
